@@ -32,4 +32,6 @@ router.put(
     ProductController.updateQuantity
 );
 
+router.get('/products', authenticate, ProductController.getProducts);
+
 module.exports = router;

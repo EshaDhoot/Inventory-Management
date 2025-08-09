@@ -22,6 +22,22 @@ class ProductService {
 
         return product;
     };
+
+    async getProducts(page = 1, limit = 10) {
+        const offset = (page - 1) * limit;
+        const { count, rows } = await Product.findAndCountAll({
+            limit,
+            offset,
+            order: [['createdAt', 'DESC']]
+        });
+
+        return {
+            totalItems: count,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+            products: rows
+        };
+    }
 }
 
 module.exports = ProductService;

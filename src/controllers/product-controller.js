@@ -30,7 +30,20 @@ const updateQuantity = async (req, res) => {
     }
 };
 
+const getProducts = async (req, res) => {
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+
+        const data = await productService.getProducts(page, limit);
+        return res.status(200).json(data);
+    } catch (error) {
+        return res.status(500).json({ message: error.message || error });
+    }
+};
+
 module.exports = {
     create,
-    updateQuantity
+    updateQuantity,
+    getProducts
 }
