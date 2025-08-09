@@ -10,4 +10,10 @@ router.post(
     UserController.create
 );
 
+router.post(
+    '/login',
+    validateUserAuth,
+    UserController.signIn
+);
+
 module.exports = router;
