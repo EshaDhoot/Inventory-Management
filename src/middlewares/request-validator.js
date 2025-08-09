@@ -29,8 +29,16 @@ const validateProductData = (req, res, next) => {
     next();
 };
 
+const validateQuantity = (req, res, next) => {
+    const { quantity } = req.body;
+    if (quantity === undefined || quantity === null || isNaN(quantity)) {
+            return res.status(400).json({ message: 'Quantity must be a valid number' });
+        }
+    next();
+};
 
 module.exports = {
     validateUserAuth,
-    validateProductData
+    validateProductData,
+    validateQuantity
 }
