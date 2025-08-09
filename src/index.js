@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const {PORT} = require('./config/serverConfig');
+const apiRoutes = require('./routes/index');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/', apiRoutes);
 
 async function start() {
   try {
