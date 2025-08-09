@@ -1,7 +1,9 @@
 const express = require('express');
 
 const UserController = require('../controllers/user-controller');
-const { validateUserAuth} = require('../middlewares/auth-request-validator')
+const ProductController = require('../controllers/product-controller');
+const authenticate = require('../middlewares/authenticate');
+const { validateUserAuth, validateProductData } = require('../middlewares/request-validator')
 const router  = express.Router();
 
 router.post(
@@ -15,5 +17,13 @@ router.post(
     validateUserAuth,
     UserController.signIn
 );
+
+router.post(
+    '/products',
+    authenticate,
+    validateProductData,
+    ProductController.create
+);
+
 
 module.exports = router;

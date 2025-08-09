@@ -1,0 +1,19 @@
+const ProductService = require('../services/product-service');
+const productService = new ProductService();
+
+const create = async (req,res) => {
+    try {
+        const response = await productService.create(req.body);
+        return res.status(201).json({
+            data: response
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message || error
+        });
+    }
+}
+
+module.exports = {
+    create
+}
