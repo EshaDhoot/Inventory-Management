@@ -3,7 +3,7 @@ const productService = new ProductService();
 
 const create = async (req,res) => {
     try {
-        const response = await productService.create(req.body);
+        const response = await productService.create({...req.body, userId: req.user.id });
         return res.status(201).json({
             data: response
         });
