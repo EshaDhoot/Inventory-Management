@@ -4,7 +4,7 @@ const UserController = require('../controllers/user-controller');
 const ProductController = require('../controllers/product-controller');
 const authenticate = require('../middlewares/authenticate');
 const { validateUserAuth, validateProductData, validateQuantity } = require('../middlewares/request-validator')
-const router  = express.Router();
+const router = express.Router();
 
 router.post(
     '/register',
@@ -33,5 +33,9 @@ router.put(
 );
 
 router.get('/products', authenticate, ProductController.getProducts);
+
+router.get('/', (req, res) => {
+    res.send('Healthy Server')
+})
 
 module.exports = router;
