@@ -17,7 +17,10 @@ const authenticate = (req, res, next) => {
     }
     try {
         const decoded = jwt.verify(token, JWT_KEY);
-        req.user = decoded;
+        req.user = {
+            id: decoded.id,
+            user: decoded.username
+        };
         next();
     } catch (err) {
         return res.status(403).json({

@@ -23,9 +23,10 @@ class ProductService {
         return product;
     };
 
-    async getProducts(page = 1, limit = 10) {
+    async getProducts(user, page = 1, limit = 10) {
         const offset = (page - 1) * limit;
         const { count, rows } = await Product.findAndCountAll({
+            where: {userId: user.id},
             limit,
             offset,
             order: [['createdAt', 'DESC']]

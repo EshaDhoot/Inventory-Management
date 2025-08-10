@@ -35,7 +35,7 @@ const getProducts = async (req, res) => {
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
 
-        const data = await productService.getProducts(page, limit);
+        const data = await productService.getProducts(req.user, page, limit);
         return res.status(200).json(data);
     } catch (error) {
         return res.status(500).json({ message: error.message || error });
