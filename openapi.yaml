@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API for user registration, authentication, and product inventory management.
 servers:
-  - url: http://localhost:4000 || https://inventory-management-production-9d5c.up.railway.app/
+  - url: https://inventory-management-production-9d5c.up.railway.app/
 paths:
   /register:
     post:
