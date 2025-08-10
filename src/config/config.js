@@ -6,6 +6,7 @@ module.exports = {
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
     host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
     dialect: 'mysql'
   },
   test: {
@@ -13,6 +14,7 @@ module.exports = {
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
     host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
     dialect: 'mysql'
   },
   production: {
@@ -20,6 +22,7 @@ module.exports = {
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
     host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
     dialect: 'mysql'
   }
 };
