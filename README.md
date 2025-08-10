@@ -19,6 +19,9 @@ A simple inventory management backend built with **Node.js**, **Express**, and *
 Access the live OpenAPI (Swagger) documentation here:  
 **[https://inventory-management-production-9d5c.up.railway.app/api-docs/](https://inventory-management-production-9d5c.up.railway.app/api-docs/)**
 
+Access the  deployed Backend here:  
+**[https://inventory-management-production-9d5c.up.railway.app/](https://inventory-management-production-9d5c.up.railway.app/)**
+
 Access the Postman collection here:
 **[https://schema.postman.com/json/collection/v2.1.0/collection.json](https://schema.postman.com/json/collection/v2.1.0/collection.json)**
 
@@ -39,7 +42,7 @@ Before starting, ensure you have:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <https://github.com/EshaDhoot/Inventory-Management.git>
+git clone https://github.com/EshaDhoot/Inventory-Management.git
 ```
 
 ---
