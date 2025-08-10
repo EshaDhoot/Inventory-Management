@@ -73,7 +73,11 @@ npm install
 
 ### 4️⃣ Create Database & Run Migrations
 
-If using Sequelize migrations:
+If using Sequelize, run the following commands in the `src` folder:
+
+```bash
+npx sequelize-cli db:create
+```
 
 ```bash
 npx sequelize-cli db:migrate
