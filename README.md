@@ -39,7 +39,7 @@ Before starting, ensure you have:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <https://github.com/EshaDhoot/Inventory-Management.git>
+git clone https://github.com/EshaDhoot/Inventory-Management.git
 ```
 
 ---
